@@ -40,11 +40,13 @@ typeset -gU cdpath fpath mailpath path
 # cdpath=(
 #   $cdpath
 # )
+gempath=("${(@s/:/)$(gem environment gempath)}")
 
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
   $HOME/.cargo/bin
+  $^gempath'/bin'
   $path
 )
 
